@@ -81,7 +81,7 @@ function generic_parser_a_blocks($rawdata, $translate, &$disclaimer)
     $newblock = false;
     $hasdata = false;
     $block = array();
-    $blocks = false;
+    $blocks = [];
     $gkey = 'main';
     $dend = false;
 
@@ -954,6 +954,23 @@ function get_date($date, $format)
 function parseStandardDate(string $date)
 {
     $date = trim($date);
+
+    // 2020-01-01T00:00:00.0{1,6}Z
+    $pattern = '/^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}).\d{1,6}(Z)$/';
+    if (preg_match($pattern, $date, $matches)) {
+        if (PHP_VERSION_ID >= 70300) {
+            // The `v` format character is broken before PHP 7.3
+            $dateTimeFormat = 'Y-m-d\TH:i:s.uT';
+            return Datetime::createFromFormat($dateTimeFormat, $date);
+        }
+
+        // For PHP < 7.3, skip the milliseconds
+        $date = $matches[1] . $matches[2];
+        echo 'in parseStandardDate';
+        echo 'die date';
+        die($date);
+        // Intentional fall-through--this will match the next pattern
+    }
 
     // 2020-01-01T00:00:00.0Z
     $pattern = '/^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}).\d(Z)$/';

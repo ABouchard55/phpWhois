@@ -1,0 +1,60 @@
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format: YYYY-MM-DDThh:mm:ssZ
+%%
+%% Rights restricted by copyright.
+%% See https://www.afnic.fr/en/domain-names-and-support/everything-there-is-to-know-about-domain-names/find-a-domain-name-or-a-holder-using-whois/
+%%
+%%
+
+domain:                        free.fr
+status:                        ACTIVE
+eppstatus:                     clientUpdateProhibited
+eppstatus:                     clientTransferProhibited
+eppstatus:                     clientDeleteProhibited
+hold:                          NO
+holder-c:                      FS1435-FRNIC
+admin-c:                       FS1435-FRNIC
+tech-c:                        FS1435-FRNIC
+registrar:                     SCALEWAY
+Expiry Date:                   2024-12-23T11:20:00Z
+created:                       1999-03-15T17:36:09Z
+last-update:                   2023-02-23T04:25:02.245925Z
+source:                        FRNIC
+
+nserver:                       freens1-g20.free.fr
+nserver:                       freens2-g20.free.fr
+nserver:                       freens3-scw.free.fr
+source:                        FRNIC
+
+registrar:                     SCALEWAY
+address:                       8, rue de la ville l'Eveque
+address:                       75008 PARIS
+country:                       FR
+phone:                         +33.184130069
+fax-no:                        +33.173502901
+e-mail:                        email@free.org
+website:                       https://www.bookmyname.com
+anonymous:                     No
+registered:                    1999-03-29T00:00:00Z
+source:                        FRNIC
+
+nic-hdl:                       FS1435-FRNIC
+type:                          ORGANIZATION
+contact:                       Free SAS
+address:                       16 rue de la ville l'Eveque
+address:                       75008 Paris
+country:                       FR
+phone:                         +33.173502000
+fax-no:                        +33.173502501
+e-mail:                        email@spamfree.bookmyname.com
+registrar:                     SCALEWAY
+changed:                       2020-01-22T17:25:55Z
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    not identified
+reachstatus:                   not identified
+source:                        FRNIC

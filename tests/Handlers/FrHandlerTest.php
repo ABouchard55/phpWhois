@@ -40,7 +40,7 @@ class FrHandlerTest extends HandlerTest
     {
         parent::setUp();
 
-        $this->handler            = new \fr_handler();
+        $this->handler            = new FrHandler();
         $this->handler->deepWhois = false;
     }
 
@@ -133,6 +133,38 @@ class FrHandlerTest extends HandlerTest
                 'changed' => '2020-07-06',
                 'created' => '1994-12-31',
                 'expires' => '2029-12-31',
+            ],
+            'registered' => 'yes',
+        ];
+
+        Assert::assertArraySubset($expected, $actual['regrinfo'], 'Whois data may have changed');
+        $this->assertArrayHasKey('rawdata', $actual);
+        Assert::assertArraySubset($fixture, $actual['rawdata'], 'Fixture data may be out of date');
+    }
+
+    /**
+     * @return void
+     *
+     * @test
+     */
+    public function parseFreeDotFr()
+    {
+        $query = 'free.fr';
+
+        $fixture = $this->loadFixture($query);
+        $data    = [
+            'rawdata'  => $fixture,
+            'regyinfo' => [],
+        ];
+
+        $actual = $this->handler->parse($data, $query);
+
+        $expected = [
+            'domain'     => [
+                'name'    => 'free.fr',
+                'changed' => '2023-02-23',
+                'created' => '1999-03-15',
+                'expires' => '2024-12-23',
             ],
             'registered' => 'yes',
         ];
